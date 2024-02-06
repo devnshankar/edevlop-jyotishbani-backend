@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import express from "express";
 import { createServer } from "node:http";
 import cors from "cors";
+import {show}  from "./show.js";
 
 // constants and config
 const app = express();
@@ -32,7 +33,7 @@ async function main() {
       app.get("/" , (req, res) => {
         res.send("Welcome to Root")
       })
-
+      show();
   } catch (error) {
     console.log(error);
   }
