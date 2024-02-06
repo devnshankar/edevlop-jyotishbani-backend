@@ -1,5 +1,6 @@
-# Jyotishbani Backend Docs
+# **Jyotishbani Backend Docs**
 
 ## Project Dependency list
 
--[x]
+- [ ] list 1
+- [x] list 2  
