@@ -10,7 +10,45 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
 model User {
-  id String @unique
+  id          Int         @id @default(autoincrement())
+  firstname   String?
+  lastname    String?
+  email       String?     @unique
+  phoneNumber String         @unique
+  password    String?
+  salt        String?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  // Add other user-related fields as needed
+  Astrologer  Astrologer?
+  otp       String?
+}
+
+// Define the data model for the astrologer
+model Astrologer {
+  id          Int    @id @default(autoincrement())
+  firstname   String?
+  lastname    String?
+  phoneNumber String    @unique
+  speciality  String?
+  bio         String?
+  salt        String?
+  userId      Int    @unique
+  user        User   @relation(fields: [userId], references: [id])
+  otp         String?
+  // Add other astrologer-related fields as needed
+}
+
+// Define the data model for the admin
+model Admin {
+  id          Int    @id @default(autoincrement())
+  firstname   String?
+  lastname    String?
+  phoneNumber String    @unique
+  email       String? @unique
+  salt        String?
+  password    String
+  otp         String?
+  // Add other admin-related fields as needed
 }

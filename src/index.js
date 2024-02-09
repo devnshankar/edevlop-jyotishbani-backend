@@ -3,7 +3,11 @@ import dotenv from "dotenv";
 import express from "express";
 import { createServer } from "node:http";
 import cors from "cors";
-import {show}  from "./show.js";
+import userRouter from "./routes/user/user.routes.js";
+import astrologerRouter from "./routes/astrologer/astrologer.routes.js";
+import adminRouter from "./routes/admin/admin.routes.js";
+
+
 
 // constants and config
 const app = express();
@@ -11,19 +15,29 @@ const server = createServer(app);
 dotenv.config();
 const PORT = process.env.PORT;
 
+// CORS CONFIG
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    methods: ["GET, POST"],
+    credentials: true,
+  })
+);
+
+// EXPRESS JSON BODY PARSER
+app.use(express.json());
+
+// ROUTES FOR USER
+app.use("/user", userRouter)
+
+// ROUTES FOR ASTROLOGER
+app.use("/astrologer", astrologerRouter)
+
+// ROUTES FOR ADMIN
+app.use("/admin", adminRouter)
+
 async function main() {
   try {
-    console.log("Hello world");
-
-    // CORS config
-    app.use(
-      cors({
-        origin: "http://localhost:5173",
-        methods: ["GET, POST"],
-        credentials: true,
-      })
-      );
-
       // Listener
       server.listen(PORT, () => {
         console.log(`Server is running on port http://localhost:${PORT}`)
@@ -33,7 +47,6 @@ async function main() {
       app.get("/" , (req, res) => {
         res.send("Welcome to Root")
       })
-      show();
   } catch (error) {
     console.log(error);
   }
