@@ -1,0 +1,98 @@
+import { prismaClient } from "../../database/client.database.js";
+import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+dotenv.config();
+
+class AstrologerService {
+  static generateOtp() {
+    // Generate a random 6-digit number
+    const otp = Math.floor(100000 + Math.random() * 900000);
+    const otpstring = otp.toString();
+    return otpstring;
+  }
+
+  static async updateOtp(phoneNumber, otp, Astrologer) {
+    try {
+      const astrologer = await prismaClient.astrologer.update({
+        where: { phoneNumber },
+        data: {
+          otp: otp,
+          phoneNumber: Astrologer.phoneNumber,
+          createdAt: Astrologer.createdAt,
+          updatedAt: Astrologer.updatedAt,
+        },
+      });
+    } catch (error) {
+      console.log(error);
+    } finally {
+      await prismaClient.$disconnect();
+    }
+  }
+
+  static async checkAstrologerExistance(phoneNumber) {
+    try {
+      const astrologer = await prismaClient.astrologer.findUnique({
+        where: { phoneNumber },
+      });
+      return astrologer;
+    } catch (error) {
+      console.log("error is here")
+      console.log(error);
+    } finally {
+      await prismaClient.$disconnect();
+    }
+  }
+
+  static async findAstrologerByPhoneNumber(phoneNumber) {
+    try {
+      const astrologer = await prismaClient.astrologer.findUnique({
+        where: { phoneNumber },
+      });
+      return astrologer;
+    } catch (error) {
+      console.log(error);
+    } finally {
+      await prismaClient.$disconnect();
+    }
+  }
+
+  static async verifyOtp(phoneNumber, otp) {
+    try {
+      const astrologer = await this.findAstrologerByPhoneNumber(phoneNumber);
+      console.log(astrologer)
+      if (astrologer.otp !== otp) {
+        return false;
+      } else {
+        return true;
+      }
+    } catch (error) {
+      console.log(error);
+    } finally {
+      await prismaClient.$disconnect();
+    }
+  }
+
+  static async generateToken(phoneNumber) {
+    const jwtSecret = process.env.JWT_SECRET;
+    const token = jwt.sign({ phoneNumber }, jwtSecret, { expiresIn: "1d" });
+    return token;
+  }
+
+  static async createAstrologer(phoneNumber) {
+    try {
+      console.log(phoneNumber)
+      const astrologer = await prismaClient.astrologer.create({
+        data: {
+          phoneNumber: phoneNumber,
+        },
+      });
+      return astrologer;
+    } catch (error) {
+      console.log(error);
+    } finally {
+      await prismaClient.$disconnect();
+    }
+  }
+}
+
+export default AstrologerService;

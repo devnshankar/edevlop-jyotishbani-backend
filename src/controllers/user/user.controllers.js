@@ -22,9 +22,7 @@ export const loginUser = async (req, res) => {
     } else {
       // generate otp of 4 digits
       const otp = UserService.generateOtp();
-      console.log(phoneNumber)
       const newUser = await UserService.createUser(phoneNumber);
-      console.log(newUser)
       await UserService.updateOtp(phoneNumber, otp, newUser);
       // return the otp as data
       res.status(201).json({
@@ -41,7 +39,7 @@ export const loginUser = async (req, res) => {
   }
 };
 
-export const verifyOtp = async (req, res) => {
+export const verifyUserOtp = async (req, res) => {
   try {
     const { phoneNumber, otp } = req.body;
     // find user and get otp and save it to a variable

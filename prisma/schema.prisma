@@ -21,7 +21,6 @@ model User {
   createdAt   DateTime    @default(now())
   updatedAt   DateTime    @updatedAt
   // Add other user-related fields as needed
-  Astrologer  Astrologer?
   otp       String?
 }
 
@@ -34,8 +33,6 @@ model Astrologer {
   speciality  String?
   bio         String?
   salt        String?
-  userId      Int    @unique
-  user        User   @relation(fields: [userId], references: [id])
   otp         String?
   // Add other astrologer-related fields as needed
 }
@@ -48,7 +45,6 @@ model Admin {
   phoneNumber String    @unique
   email       String? @unique
   salt        String?
-  password    String
   otp         String?
   // Add other admin-related fields as needed
 }

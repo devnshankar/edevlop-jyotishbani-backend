@@ -8,7 +8,6 @@ import astrologerRouter from "./routes/astrologer/astrologer.routes.js";
 import adminRouter from "./routes/admin/admin.routes.js";
 
 
-
 // constants and config
 const app = express();
 const server = createServer(app);
