@@ -6,18 +6,17 @@ import cors from "cors";
 import userRouter from "./routes/user/user.routes.js";
 import astrologerRouter from "./routes/astrologer/astrologer.routes.js";
 import adminRouter from "./routes/admin/admin.routes.js";
-
+import { Server } from "socket.io";
 
 // constants and config
 const app = express();
 const server = createServer(app);
 dotenv.config();
 const PORT = process.env.PORT;
-
 // CORS CONFIG
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "*",
     methods: ["GET, POST"],
     credentials: true,
   })
@@ -46,6 +45,9 @@ async function main() {
       app.get("/" , (req, res) => {
         res.send("Welcome to Root")
       })
+
+
+      
   } catch (error) {
     console.log(error);
   }
@@ -53,3 +55,4 @@ async function main() {
 
 // main function invocation
 main();
+

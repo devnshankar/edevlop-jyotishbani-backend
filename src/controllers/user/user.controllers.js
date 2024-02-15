@@ -1,7 +1,23 @@
 import UserService from "../../services/user/user.services.js";
 
-export const getUser = (req, res) => {
-  res.send({ name: "subha", email: "subha@gmail.com" });
+export const getUser = async (req, res) => {
+  try {
+    // get the phone number from the request body
+    const { phoneNumber } = req.body;
+    // send get request to database
+    const user = await UserService.getUser(phoneNumber);
+    // return user
+    res.status(200).json({
+      user: user,
+      success: true,
+      message: "Fetched user data successfully",
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({
+      message: "Internal server error",
+    });
+  }
 };
 
 export const loginUser = async (req, res) => {
@@ -52,12 +68,53 @@ export const verifyUserOtp = async (req, res) => {
       });
     } else {
       // if successful generate an auth token
-      const token = await UserService.generateToken(phoneNumber);
+      const accessToken = await UserService.generateToken(phoneNumber, "6h");
+      const refreshToken = await UserService.generateToken(phoneNumber, "3d");
+      // Set tokens as cookies
+      res.cookie("accessToken", accessToken, { httpOnly: true });
+      res.cookie("refreshToken", refreshToken, { httpOnly: true });
       // return the auth token to the req sender
       return res.status(200).json({
         message: "Otp verified & User logged In successfully",
         success: true,
-        token: token,
+      });
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({
+      message: "Internal server error",
+    });
+  }
+};
+
+export const updateUser = async (req, res) => {
+  try {
+    // make a prisma client user updation request to the database
+    const User = await UserService.updateUser(req.body);
+    // return the updated user data
+    console.log(User);
+    return res.status(201).json({ user: User });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({
+      message: "Internal server error",
+    });
+  }
+};
+export const deleteUser = async (req, res) => {
+  try {
+    const { phoneNumber } = req.body;
+    // make a prisma client user updation request to the database
+    const status = await UserService.deleteUser(phoneNumber);
+    // return true when user deleted
+    if (status) {
+      return res
+        .status(201)
+        .json({ message: "User deleted successfully", success: true });
+    } else {
+      return res.status(201).json({
+        message: "User could not be deleted, Try again",
+        success: false,
       });
     }
   } catch (error) {

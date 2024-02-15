@@ -29,6 +29,17 @@ class UserService {
     }
   }
 
+  static async getUser(phoneNumber) {
+    try {
+      const user = await this.findUserByPhoneNumber(phoneNumber);
+      return user;
+    } catch (error) {
+      console.log(error);
+    } finally {
+      await prismaClient.$disconnect();
+    }
+  }
+
   static async checkUserExistance(phoneNumber) {
     try {
       const user = await prismaClient.user.findUnique({
@@ -70,9 +81,9 @@ class UserService {
     }
   }
 
-  static async generateToken(phoneNumber) {
+  static async generateToken(phoneNumber, duration) {
     const jwtSecret = process.env.JWT_SECRET;
-    const token = jwt.sign({ phoneNumber }, jwtSecret, { expiresIn: "1d" });
+    const token = jwt.sign({ phoneNumber }, jwtSecret, { expiresIn: duration });
     return token;
   }
 
@@ -84,6 +95,58 @@ class UserService {
         },
       });
       return user;
+    } catch (error) {
+      console.log(error);
+    } finally {
+      await prismaClient.$disconnect();
+    }
+  }
+  static async updateUser(body) {
+    try {
+      const {
+        firstname,
+        lastname,
+        email,
+        phoneNumber,
+        gender,
+        place_of_birth,
+        date_of_birth,
+        time_of_birth,
+        status,
+      } = body;
+      const updationTime = new Date().toISOString();
+      const user = await prismaClient.user.update({
+        where: {
+          phoneNumber,
+        },
+        data: {
+          firstname: firstname,
+          lastname: lastname,
+          email: email,
+          gender: gender,
+          place_of_birth: place_of_birth,
+          date_of_birth: date_of_birth,
+          time_of_birth: time_of_birth,
+          status: status,
+          updatedAt: updationTime,
+        },
+      });
+      return user;
+    } catch (error) {
+      console.log(error);
+    } finally {
+      await prismaClient.$disconnect();
+    }
+  }
+
+  static async deleteUser(phoneNumber) {
+    try {
+      const user = await prismaClient.user.delete({
+        where: {
+          phoneNumber: phoneNumber,
+        },
+      });
+      return true;
     } catch (error) {
       console.log(error);
     } finally {

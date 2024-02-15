@@ -11,40 +11,194 @@ datasource db {
 }
 
 model User {
-  id          Int         @id @default(autoincrement())
-  firstname   String?
-  lastname    String?
-  email       String?     @unique
-  phoneNumber String         @unique
-  password    String?
-  salt        String?
-  createdAt   DateTime    @default(now())
-  updatedAt   DateTime    @updatedAt
+  id             Int       @id @default(autoincrement())
+  firstname      String?
+  lastname       String?
+  email          String?   @unique
+  phoneNumber    String    @unique
+  otp            String?
+  otp_expired_in DateTime?
+
+  gender         Gender?
+  place_of_birth String?
+  date_of_birth  DateTime?
+  time_of_birth  DateTime?
+  status         Status?
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+  followings     Astrologer[] @relation("UserToAstrologer")
+  wallet         Wallet?
+  notifications  Notification[] @relation("UserNotifications")
+  socketId       String?
   // Add other user-related fields as needed
-  otp       String?
 }
 
 // Define the data model for the astrologer
 model Astrologer {
-  id          Int    @id @default(autoincrement())
-  firstname   String?
-  lastname    String?
-  phoneNumber String    @unique
-  speciality  String?
-  bio         String?
-  salt        String?
-  otp         String?
-  // Add other astrologer-related fields as needed
+  id             Int       @id @default(autoincrement())
+  firstname      String?
+  lastname       String?
+  phoneNumber    String    @unique
+  email          String?
+  otp            String?
+  otp_expired_in DateTime?
+  password       String?
+
+  gender          Gender?
+  status          Status?
+  image           String?
+  short_bio       String?
+  city            String?
+  country         String?
+  languages       Language[]
+  astrologer_type AstrologerType[]
+  followers       User[]           @relation("UserToAstrologer")
+  rates           Rate[]
+  wallet          Wallet?
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  notifications  Notification[] @relation("AstrologerNotifications")
+  socketId        String?
+}
+
+model Language {
+  id            Int          @id @default(autoincrement())
+  language_name String
+  astrologers   Astrologer[]
+}
+
+model AstrologerType {
+  id          Int          @id @default(autoincrement())
+  type        String       @unique
+  astrologers Astrologer[]
+  createdAt   DateTime?    @default(now())
+  updatedAt   DateTime?    @updatedAt()
+
+  @@map("astrologer_type")
+}
+
+model Rate {
+  id                Int        @id @default(autoincrement())
+  call_rate         Float
+  chat_rate         Float
+  private_call_rate Float
+  discount          Float
+  createdAt         DateTime?  @default(now())
+  updatedAt         DateTime?  @updatedAt()
+  astrologer        Astrologer @relation(fields: [astrologerId], references: [id])
+  astrologerId      Int
+}
+
+model Wallet {
+  ID            Int           @id @default(autoincrement())
+  balance       Float         @default(0)
+  user          User?         @relation(fields: [user_id], references: [id])
+  user_id       Int?          @unique
+  astrologers   Astrologer?   @relation(fields: [astrologer_id], references: [id])
+  astrologer_id Int?          @unique
+  transactions  Transaction[]
+}
+
+model Transaction {
+  ID          Int             @id @default(autoincrement())
+  oder_id     String?         @unique
+  receipt     String?         @unique
+  type        TransactionType
+  amount      Float
+  description String?
+  wallet      Wallet          @relation(fields: [wallet_id], references: [ID])
+  wallet_id   Int
+  createdAt   DateTime        @default(now())
 }
 
 // Define the data model for the admin
 model Admin {
-  id          Int    @id @default(autoincrement())
+  id          Int      @id @default(autoincrement())
   firstname   String?
   lastname    String?
-  phoneNumber String    @unique
-  email       String? @unique
-  salt        String?
+  gender      Gender?
+  phoneNumber String   @unique
+  email       String?
   otp         String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime  @updatedAt
+  notifications  Notification[] @relation("AdminNotifications")
+  socketId        String?
   // Add other admin-related fields as needed
+}
+
+model Notification {
+  id          Int       @id @default(autoincrement())
+  type        NotificationType
+  title       String
+  description String?
+  priority    Priority
+  seen        Boolean   @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  users       User[]    @relation("UserNotifications")
+  astrologers Astrologer[] @relation("AstrologerNotifications")
+  admins      Admin[]   @relation("AdminNotifications")
+}
+
+model Chatroom {
+  id          Int        @id @default(autoincrement())
+  roomId      String?
+  roomtype    RoomType   @default(private)
+  messages    Message[]  @relation("ChatroomMessages")
+}
+
+model Message {
+  id          Int        @id @default(autoincrement())
+  text        String
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime?  @updatedAt
+
+  chatroom    Chatroom?  @relation("ChatroomMessages", fields: [chatroomId], references: [id])
+  chatroomId  Int?
+}
+
+
+enum RoomType {
+  private
+  public
+}
+
+enum NotificationType {
+  message
+  astrologerrequest
+  adminrequest
+}
+
+enum Priority {
+  high
+  medium
+  low
+}
+enum TransactionType {
+  credit
+  debit
+}
+
+enum Gender {
+  male
+  female
+  other
+}
+
+enum Status {
+  active
+  inactive
+}
+
+enum TicketStatus {
+  open
+  inprogress
+  close
+}
+
+enum KundaliType {
+  boy
+  girl
 }

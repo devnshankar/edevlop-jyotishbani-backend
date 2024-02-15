@@ -11,6 +11,17 @@ class AdminService {
     return otpstring;
   }
 
+  static async getAdmin(phoneNumber) {
+    try {
+      const admin = await this.findAdminByPhoneNumber(phoneNumber);
+      return admin;
+    } catch (error) {
+      console.log(error);
+    } finally {
+      await prismaClient.$disconnect();
+    }
+  }
+
   static async updateOtp(phoneNumber, otp, Admin) {
     try {
       const admin = await prismaClient.admin.update({
@@ -70,9 +81,9 @@ class AdminService {
     }
   }
 
-  static async generateToken(phoneNumber) {
+  static async generateToken(phoneNumber, duration) {
     const jwtSecret = process.env.JWT_SECRET;
-    const token = jwt.sign({ phoneNumber }, jwtSecret, { expiresIn: "1d" });
+    const token = jwt.sign({ phoneNumber }, jwtSecret, { expiresIn: duration });
     return token;
   }
 
@@ -84,6 +95,51 @@ class AdminService {
         },
       });
       return admin;
+    } catch (error) {
+      console.log(error);
+    } finally {
+      await prismaClient.$disconnect();
+    }
+  }
+
+  static async deleteAdmin(phoneNumber) {
+    try {
+      const admin = await prismaClient.admin.delete({
+        where: {
+          phoneNumber: phoneNumber,
+        },
+      });
+      return true;
+    } catch (error) {
+      console.log(error);
+    } finally {
+      await prismaClient.$disconnect();
+    }
+  }
+
+  static async updateAdmin(body) {
+    try {
+      const {
+        firstname,
+        lastname,
+        email,
+        gender,
+        phoneNumber
+      } = body;
+      const updationTime = new Date().toISOString();
+      const astrologer = await prismaClient.admin.update({
+        where: {
+          phoneNumber,
+        },
+        data: {
+          firstname: firstname,
+          lastname: lastname,
+          email: email,
+          gender: gender,
+          updatedAt: updationTime,
+        },
+      });
+      return astrologer;
     } catch (error) {
       console.log(error);
     } finally {

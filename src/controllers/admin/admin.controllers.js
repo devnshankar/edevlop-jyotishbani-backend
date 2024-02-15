@@ -1,7 +1,23 @@
 import AdminService from "../../services/admin/admin.services.js";
 
-export const getAdmin = (req, res) => {
-  res.send({ name: "subha", email: "subha@gmail.com" });
+export const getAdmin = async (req, res) => {
+  try {
+    // get the phone number from the request body
+    const { phoneNumber } = req.body;
+    // send get request to database
+    const admin = await AdminService.getAdmin(phoneNumber);
+    // return user
+    res.status(200).json({
+      admin: admin,
+      success: true,
+      message: "Fetched astrologer data successfully",
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({
+      message: "Internal server error",
+    });
+  }
 };
 
 export const loginAdmin = async (req, res) => {
@@ -58,12 +74,15 @@ export const verifyAdminOtp = async (req, res) => {
       });
     } else {
       // if successful generate an auth token
-      const token = await AdminService.generateToken(phoneNumber);
+      const accessToken = await AdminService.generateToken(phoneNumber, "6h");
+      const refreshToken = await AdminService.generateToken(phoneNumber, "3d");
+      // Set tokens as cookies
+      res.cookie("accessToken", accessToken, { httpOnly: true });
+      res.cookie("refreshToken", refreshToken, { httpOnly: true });
       // return the auth token to the req sender
       return res.status(200).json({
         message: "Otp verified & Admin logged In successfully",
         success: true,
-        token: token,
       });
     }
   } catch (error) {
@@ -73,3 +92,45 @@ export const verifyAdminOtp = async (req, res) => {
     });
   }
 };
+
+export const updateAdmin = async (req, res) => {
+  try {
+    // make a prisma client admin updation request to the database
+    console.log(req.body)
+    const Admin = await AdminService.updateAdmin(req.body);
+    // return the updated admin data
+    console.log(Admin);
+    return res.status(201).json({ admin: Admin });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({
+      message: "Internal server error",
+    });
+  }
+};
+
+
+export const deleteAdmin = async (req, res) => {
+  try {
+    const { phoneNumber } = req.body;
+    // make a prisma client user updation request to the database
+    const status = await AdminService.deleteAdmin(phoneNumber);
+    // return true when user deleted
+    if (status) {
+      return res
+        .status(201)
+        .json({ message: "Admin deleted successfully", success: true });
+    } else {
+      return res.status(201).json({
+        message: "Admin could not be deleted, Try again",
+        success: false,
+      });
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({
+      message: "Internal server error",
+    });
+  }
+};
+

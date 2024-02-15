@@ -11,6 +11,17 @@ class AstrologerService {
     return otpstring;
   }
 
+  static async getAstrologer(phoneNumber) {
+    try {
+      const astrologer = await this.findAstrologerByPhoneNumber(phoneNumber);
+      return astrologer;
+    } catch (error) {
+      console.log(error);
+    } finally {
+      await prismaClient.$disconnect();
+    }
+  }
+
   static async updateOtp(phoneNumber, otp, Astrologer) {
     try {
       const astrologer = await prismaClient.astrologer.update({
@@ -36,7 +47,7 @@ class AstrologerService {
       });
       return astrologer;
     } catch (error) {
-      console.log("error is here")
+      console.log("error is here");
       console.log(error);
     } finally {
       await prismaClient.$disconnect();
@@ -59,7 +70,7 @@ class AstrologerService {
   static async verifyOtp(phoneNumber, otp) {
     try {
       const astrologer = await this.findAstrologerByPhoneNumber(phoneNumber);
-      console.log(astrologer)
+      console.log(astrologer);
       if (astrologer.otp !== otp) {
         return false;
       } else {
@@ -72,18 +83,75 @@ class AstrologerService {
     }
   }
 
-  static async generateToken(phoneNumber) {
+  static async generateToken(phoneNumber, duration) {
     const jwtSecret = process.env.JWT_SECRET;
-    const token = jwt.sign({ phoneNumber }, jwtSecret, { expiresIn: "1d" });
+    const token = jwt.sign({ phoneNumber }, jwtSecret, { expiresIn: duration });
     return token;
   }
 
   static async createAstrologer(phoneNumber) {
     try {
-      console.log(phoneNumber)
+      console.log(phoneNumber);
       const astrologer = await prismaClient.astrologer.create({
         data: {
           phoneNumber: phoneNumber,
+        },
+      });
+      return astrologer;
+    } catch (error) {
+      console.log(error);
+    } finally {
+      await prismaClient.$disconnect();
+    }
+  }
+
+  static async deleteAstrologer(phoneNumber) {
+    try {
+      const astrologer = await prismaClient.astrologer.delete({
+        where: {
+          phoneNumber: phoneNumber,
+        },
+      });
+      return true;
+    } catch (error) {
+      console.log(error);
+    } finally {
+      await prismaClient.$disconnect();
+    }
+  }
+
+  static async updateAstrologer(body) {
+    try {
+      const {
+        firstname,
+        lastname,
+        email,
+        phoneNumber,
+        gender,
+        status,
+        image,
+        short_bio,
+        city,
+        country,
+        astrologer_type,
+      } = body;
+      const updationTime = new Date().toISOString();
+      const astrologer = await prismaClient.astrologer.update({
+        where: {
+          phoneNumber,
+        },
+        data: {
+          firstname: firstname,
+          lastname: lastname,
+          email: email,
+          gender: gender,
+          status: status,
+          updatedAt: updationTime,
+          image: image,
+          short_bio: short_bio,
+          city: city,
+          country: country,
+          // astrologer_type: astrologer_type,
         },
       });
       return astrologer;
