@@ -14,3 +14,12 @@
 ### Dev-dependencies
 
 - [x] [Nodemon](https://www.npmjs.com/package/nodemon)
+
+
+### ERROR_CODE
+
+  3401 - Internal Server error (auth error)
+
+  3501 - No access token found in the request header
+  3502 - AccessToken expired 
+  3503 - Refresh Token expired
