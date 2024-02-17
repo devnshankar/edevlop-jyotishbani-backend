@@ -16,11 +16,8 @@ RUN npm cache clean --force
 # Copying the rest of the application code to the docker volume
 COPY . .
 
-
 # generating prisma folders
 RUN npx prisma generate
-
-
 
 # Giving elevated execution permissions to ngrok file that deals with domain creation
 RUN chmod +x /usr/src/app/ngrok/ngrok
@@ -29,7 +26,7 @@ RUN chmod +x /usr/src/app/ngrok/ngrok
 RUN chmod +x /usr/src/app/ngrok/start-ngrok.sh
 
 # Executing the ngrok user authtoken configuration through which the domain will be created
-RUN ./ngrok/ngrok config add-authtoken 2YkB9ii3Y4pmQt52BodfTOxHPtH_KeV2ZPP3SJgkjMEwA3H6
+RUN ./ngrok/ngrok config add-authtoken 2cUT8jQZUmZyRHzNKFGDx9Wi5iC_4xyDAb4mAJmxSAqco3fmp
 
 # Installing necessary dependencies for the bash script file 
 RUN apt-get update && apt-get install -y bash netcat-openbsd 
