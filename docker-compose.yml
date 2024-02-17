@@ -1,22 +1,23 @@
-version: "3.8"
+version: "3.3"
 
 services:
   node-app:
     env_file:
       - .env
+    restart: always
     build:
       context: .
       dockerfile: Dockerfile
     ports:
       - 3000:${PORT}
     environment:
-      PORT: 3000
-      DATABASE_URL: "mysql://root:mypassword@localhost:3307/mydatabase"
-      JWT_SECRET: 98sydf9a7s9dfb6a9sd6f0as8d6f8asd67f0asd76f
+      PORT: ${PORT}
+      DATABASE_URL: ${DATABASE_URL}
+      JWT_SECRET: ${JWT_SECRET}
     networks:
       - astro-network
 
-  db:
+  mysql:
     image: mysql:latest
     restart: always
     environment:
@@ -25,7 +26,7 @@ services:
       MYSQL_USER: myuser
       MYSQL_PASSWORD: myuserpassword
     ports:
-      - "3307:3306" # Map container port 3306 to host port 3307
+      - "3306:${MYSQL_PORT}" # Map container port 3306 to host port 3307
     volumes:
       - ./data:/var/lib/mysql
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql # Mount initialization script

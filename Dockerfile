@@ -16,6 +16,7 @@ RUN npm cache clean --force
 # Copying the rest of the application code to the docker volume
 COPY . .
 
+
 # generating prisma folders
 RUN npx prisma generate
 
