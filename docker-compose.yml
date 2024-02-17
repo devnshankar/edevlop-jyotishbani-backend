@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
   node-app:
@@ -10,7 +10,7 @@ services:
     ports:
       - 3000:${PORT}
     environment:
-      PORT :  3000
+      PORT: 3000
       DATABASE_URL: "mysql://root:mypassword@localhost:3307/mydatabase"
       JWT_SECRET: 98sydf9a7s9dfb6a9sd6f0as8d6f8asd67f0asd76f
     networks:
@@ -31,8 +31,6 @@ services:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql # Mount initialization script
     networks:
       - astro-network
-
-
 
 networks:
   astro-network:
