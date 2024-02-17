@@ -5,6 +5,8 @@ services:
     env_file:
       - .env
     restart: always
+    depends_on:
+      - mysql
     build:
       context: .
       dockerfile: Dockerfile
