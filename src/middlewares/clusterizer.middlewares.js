@@ -6,7 +6,7 @@ export function nodeClusterizer(main) {
 
   if (cluster.isPrimary) {
     console.log(`#  Process:Master | pid:${process.pid} | status:started`);
-    for (let i = 0; i < numberOfCores; i++) {
+    for (let i = 3; i < numberOfCores; i++) {
       cluster.fork();
     }
     cluster.on("exit", (worker) => {

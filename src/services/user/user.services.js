@@ -6,7 +6,7 @@ dotenv.config();
 class UserService {
   static generateOtp() {
     // Generate a random 6-digit number
-    const otp = Math.floor(100000 + Math.random() * 900000);
+    const otp = Math.floor(1000 + Math.random() * 9000);
     const otpstring = otp.toString();
     return otpstring;
   }

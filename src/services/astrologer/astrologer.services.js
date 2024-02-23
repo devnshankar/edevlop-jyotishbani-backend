@@ -6,7 +6,7 @@ dotenv.config();
 class AstrologerService {
   static generateOtp() {
     // Generate a random 6-digit number
-    const otp = Math.floor(100000 + Math.random() * 900000);
+    const otp = Math.floor(1000 + Math.random() * 9000);
     const otpstring = otp.toString();
     return otpstring;
   }
@@ -47,7 +47,6 @@ class AstrologerService {
       });
       return astrologer;
     } catch (error) {
-      console.log("error is here");
       console.log(error);
     } finally {
       await prismaClient.$disconnect();
@@ -70,7 +69,7 @@ class AstrologerService {
   static async verifyOtp(phoneNumber, otp) {
     try {
       const astrologer = await this.findAstrologerByPhoneNumber(phoneNumber);
-      console.log(astrologer);
+
       if (astrologer.otp !== otp) {
         return false;
       } else {
@@ -91,7 +90,6 @@ class AstrologerService {
 
   static async createAstrologer(phoneNumber) {
     try {
-      console.log(phoneNumber);
       const astrologer = await prismaClient.astrologer.create({
         data: {
           phoneNumber: phoneNumber,

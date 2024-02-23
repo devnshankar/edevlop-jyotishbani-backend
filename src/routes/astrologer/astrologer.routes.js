@@ -5,6 +5,7 @@ import {
   verifyAstrologerOtp,
   updateAstrologer,
   deleteAstrologer,
+  astrologerAccessTokenProvider,
 } from "../../controllers/astrologer/astrologer.controllers.js";
 import auth from "../../middlewares/auth.middlewares.js";
 
@@ -12,8 +13,9 @@ const astrologerRouter = express.Router();
 
 astrologerRouter.get("/",auth, getAstrologer);
 astrologerRouter.post("/login", loginAstrologer);
-astrologerRouter.get("/verify", verifyAstrologerOtp);
+astrologerRouter.post("/verify", verifyAstrologerOtp);
 astrologerRouter.put("/update", auth, updateAstrologer);
 astrologerRouter.delete("/delete", auth, deleteAstrologer);
+astrologerRouter.delete("/access", astrologerAccessTokenProvider);
 
 export default astrologerRouter;

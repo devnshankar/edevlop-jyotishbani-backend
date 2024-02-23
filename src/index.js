@@ -8,6 +8,7 @@ import astrologerRouter from "./routes/astrologer/astrologer.routes.js";
 import adminRouter from "./routes/admin/admin.routes.js";
 import { Server } from "socket.io";
 import { nodeClusterizer } from "./middlewares/clusterizer.middlewares.js";
+import globalRouter from "./routes/global/global.routes.js";
 
 // constants and config
 
@@ -16,7 +17,7 @@ async function main() {
     const app = express();
     const server = createServer(app);
     dotenv.config();
-    const PORT = process.env.PORT;
+    const PRIMARY_PORT = process.env.PRIMARY_PORT || 3009
     // CORS CONFIG
     app.use(
       cors({
@@ -38,14 +39,23 @@ async function main() {
     // ROUTES FOR ADMIN
     app.use("/admin", adminRouter);
 
+    // ROUTES FOR GLOBAL
+    app.use("/global", globalRouter)
+
     // Listener
-    server.listen(PORT, () => {
-      console.log(`Server is running on port http://localhost:${PORT}`);
+    server.listen(PRIMARY_PORT, () => {
+      console.log(
+        `Server is running on port http://localhost:${PRIMARY_PORT}`
+      );
     });
 
     // Routes
     app.get("/", (req, res) => {
-      res.send("Welcome to Root");
+      try {
+        res.send("SERVER ONLINE !!!");
+      } catch (error) {
+        res.status(500).send("INTERNAL SERVER ERROR !!!")
+      }
     });
   } catch (error) {
     console.log(error);

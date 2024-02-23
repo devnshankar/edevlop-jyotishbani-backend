@@ -1,23 +1,23 @@
 version: "3.3"
 
 services:
-  node-app:
-    env_file:
-      - .env
-    restart: always
-    depends_on:
-      - mysql
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - 3000:${PORT}
-    environment:
-      PORT: ${PORT}
-      DATABASE_URL: ${DATABASE_URL}
-      JWT_SECRET: ${JWT_SECRET}
-    networks:
-      - astro-network
+  # node-app:
+  #   env_file:
+  #     - .env
+  #   restart: always
+  #   depends_on:
+  #     - mysql
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - 3000:${PORT}
+  #   environment:
+  #     PORT: ${PORT}
+  #     DATABASE_URL: ${DATABASE_URL}
+  #     JWT_SECRET: ${JWT_SECRET}
+  #   networks:
+  #     - astronetwork
 
   mysql:
     image: mysql:latest
@@ -28,13 +28,13 @@ services:
       MYSQL_USER: myuser
       MYSQL_PASSWORD: myuserpassword
     ports:
-      - "3306:${MYSQL_PORT}" # Map container port 3306 to host port 3307
+      - "3307:${MYSQL_PORT}" # Map container port 3306 to host port 3307
     volumes:
       - ./data:/var/lib/mysql
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql # Mount initialization script
     networks:
-      - astro-network
+      - astronetwork
 
 networks:
-  astro-network:
+  astronetwork:
     driver: bridge
