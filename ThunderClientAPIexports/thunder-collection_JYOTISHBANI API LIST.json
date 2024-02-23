@@ -1,0 +1,909 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "JYOTISHBANI API LIST",
+    "dateExported": "2024-02-23T10:13:25.595Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "6c3dd18d-6b8b-447d-b76d-92a0f1dc6de6",
+            "name": "ADMIN",
+            "containerId": "",
+            "created": "2024-02-22T05:44:34.945Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "1dffbc41-b074-4405-a97a-00ea8af9375c",
+            "name": "DEPLOYMENT",
+            "containerId": "6c3dd18d-6b8b-447d-b76d-92a0f1dc6de6",
+            "created": "2024-02-22T05:46:54.246Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "a893d5c8-0bc6-465f-9484-c98c66905f33",
+            "name": "DEVELOPMENT",
+            "containerId": "6c3dd18d-6b8b-447d-b76d-92a0f1dc6de6",
+            "created": "2024-02-22T05:48:53.107Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "da1995df-999c-497b-bb51-259d706b40a1",
+            "name": "USER",
+            "containerId": "",
+            "created": "2024-02-22T05:54:18.118Z",
+            "sortNum": 40000
+        },
+        {
+            "_id": "5865816f-c321-464c-986d-927773d54ac9",
+            "name": "DEPLOYMENT",
+            "containerId": "da1995df-999c-497b-bb51-259d706b40a1",
+            "created": "2024-02-22T05:54:39.491Z",
+            "sortNum": 50000
+        },
+        {
+            "_id": "8ec5ea2c-cd49-498f-a99d-fefc03daf037",
+            "name": "DEVELOPMENT",
+            "containerId": "da1995df-999c-497b-bb51-259d706b40a1",
+            "created": "2024-02-22T05:55:02.615Z",
+            "sortNum": 60000
+        },
+        {
+            "_id": "96d7cd1d-6ad5-4378-a357-bc58d4ecd265",
+            "name": "GLOBAL",
+            "containerId": "",
+            "created": "2024-02-22T05:55:39.679Z",
+            "sortNum": 60000
+        },
+        {
+            "_id": "cfe49897-8512-4c2c-8bd0-ec31246f3e62",
+            "name": "DEPLOYMENT",
+            "containerId": "96d7cd1d-6ad5-4378-a357-bc58d4ecd265",
+            "created": "2024-02-22T05:55:47.318Z",
+            "sortNum": 70000
+        },
+        {
+            "_id": "e9d4fb8c-ec3d-4ffc-bcb5-f4500c9588df",
+            "name": "DEVELOPMENT",
+            "containerId": "96d7cd1d-6ad5-4378-a357-bc58d4ecd265",
+            "created": "2024-02-22T06:08:39.416Z",
+            "sortNum": 80000
+        },
+        {
+            "_id": "32831893-e257-439e-a657-fad8ca1f7e3f",
+            "name": "ASTROLOGER",
+            "containerId": "",
+            "created": "2024-02-22T06:09:35.289Z",
+            "sortNum": 80000
+        },
+        {
+            "_id": "951c6172-f879-4422-b2dc-8a548d012471",
+            "name": "DEPLOYMENT",
+            "containerId": "32831893-e257-439e-a657-fad8ca1f7e3f",
+            "created": "2024-02-22T06:09:42.831Z",
+            "sortNum": 90000
+        },
+        {
+            "_id": "3aaaa4c7-3b9b-449d-aa3c-4d4abbf1167e",
+            "name": "DEVELOPMENT",
+            "containerId": "32831893-e257-439e-a657-fad8ca1f7e3f",
+            "created": "2024-02-22T06:10:22.593Z",
+            "sortNum": 100000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "02e1a2aa-fc57-425a-96d3-fe052a5f97af",
+            "colId": "66030f91-8b23-4bb9-b783-b9ff8ae96184",
+            "containerId": "1dffbc41-b074-4405-a97a-00ea8af9375c",
+            "name": "Admin Login ",
+            "url": "https://astrobackend.edevlop.com//admin/login",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-22T05:47:34.979Z",
+            "modified": "2024-02-22T05:47:34.979Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFmMTFhMGQ3LThjOTAtNDYxMC1iZDhiLTVhOWNkYWFlZmU5ZCIsImVtYWlsIjoic3ViaGFzaGFua2FyYmVoZXJhQGdtYWlsLmNvbSIsImlhdCI6MTcwNTU0NjY3NCwiZXhwIjoxNzA4MTM4Njc0fQ.Ri9nAnTJUZHrZhMLGhf2q3IRMPTQAUH0SE2gw-3nJ7I\""
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"phoneNumber\":\"99999999994\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "13b382b8-ae5c-4ac2-bf8d-5eae0ba9d51e",
+            "colId": "66030f91-8b23-4bb9-b783-b9ff8ae96184",
+            "containerId": "a893d5c8-0bc6-465f-9484-c98c66905f33",
+            "name": "Admin Login ",
+            "url": "http://localhost:3000/admin/login",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-22T05:48:53.107Z",
+            "modified": "2024-02-23T07:20:23.570Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"phoneNumber\":\"1234567890\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "a0f8e03b-e35a-4a05-9060-b81236a12b01",
+            "colId": "66030f91-8b23-4bb9-b783-b9ff8ae96184",
+            "containerId": "5865816f-c321-464c-986d-927773d54ac9",
+            "name": "User login",
+            "url": "https://astrobackend.edevlop.com/user/login",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-22T05:54:49.144Z",
+            "modified": "2024-02-22T05:54:49.144Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFmMTFhMGQ3LThjOTAtNDYxMC1iZDhiLTVhOWNkYWFlZmU5ZCIsImVtYWlsIjoic3ViaGFzaGFua2FyYmVoZXJhQGdtYWlsLmNvbSIsImlhdCI6MTcwNTU0NjY3NCwiZXhwIjoxNzA4MTM4Njc0fQ.Ri9nAnTJUZHrZhMLGhf2q3IRMPTQAUH0SE2gw-3nJ7I\""
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"phoneNumber\":\"9999999999s\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "21ada9e2-81a6-4295-b114-684d90f3c98b",
+            "colId": "66030f91-8b23-4bb9-b783-b9ff8ae96184",
+            "containerId": "8ec5ea2c-cd49-498f-a99d-fefc03daf037",
+            "name": "User Login",
+            "url": "http://localhost:3000/user/login",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-22T05:55:02.615Z",
+            "modified": "2024-02-23T07:34:18.627Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFmMTFhMGQ3LThjOTAtNDYxMC1iZDhiLTVhOWNkYWFlZmU5ZCIsImVtYWlsIjoic3ViaGFzaGFua2FyYmVoZXJhQGdtYWlsLmNvbSIsImlhdCI6MTcwNTU0NjY3NCwiZXhwIjoxNzA4MTM4Njc0fQ.Ri9nAnTJUZHrZhMLGhf2q3IRMPTQAUH0SE2gw-3nJ7I\""
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"phoneNumber\":\"1234567890\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "e0515b44-7de5-4955-a337-962052b7cb7a",
+            "colId": "66030f91-8b23-4bb9-b783-b9ff8ae96184",
+            "containerId": "951c6172-f879-4422-b2dc-8a548d012471",
+            "name": "Astrologer Login",
+            "url": "https://astrobackend.edevlop.com/astrologer/login",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-22T06:09:53.875Z",
+            "modified": "2024-02-23T09:56:49.708Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFmMTFhMGQ3LThjOTAtNDYxMC1iZDhiLTVhOWNkYWFlZmU5ZCIsImVtYWlsIjoic3ViaGFzaGFua2FyYmVoZXJhQGdtYWlsLmNvbSIsImlhdCI6MTcwNTU0NjY3NCwiZXhwIjoxNzA4MTM4Njc0fQ.Ri9nAnTJUZHrZhMLGhf2q3IRMPTQAUH0SE2gw-3nJ7I\""
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"phoneNumber\":\"9999999999\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "c025a20c-fbf0-4fa0-a6d6-4f538049c472",
+            "colId": "66030f91-8b23-4bb9-b783-b9ff8ae96184",
+            "containerId": "3aaaa4c7-3b9b-449d-aa3c-4d4abbf1167e",
+            "name": "Astrologer Login",
+            "url": "http://localhost:3000/astrologer/login",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-22T06:10:22.593Z",
+            "modified": "2024-02-22T06:10:22.593Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFmMTFhMGQ3LThjOTAtNDYxMC1iZDhiLTVhOWNkYWFlZmU5ZCIsImVtYWlsIjoic3ViaGFzaGFua2FyYmVoZXJhQGdtYWlsLmNvbSIsImlhdCI6MTcwNTU0NjY3NCwiZXhwIjoxNzA4MTM4Njc0fQ.Ri9nAnTJUZHrZhMLGhf2q3IRMPTQAUH0SE2gw-3nJ7I\""
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"phoneNumber\":\"9999999999\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "1edb80bf-0bfa-49c3-9c4e-707998186d53",
+            "colId": "66030f91-8b23-4bb9-b783-b9ff8ae96184",
+            "containerId": "1dffbc41-b074-4405-a97a-00ea8af9375c",
+            "name": "Admin Otp Verify",
+            "url": "https://astrobackend.edevlop.com/admin/verify",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-02-22T05:47:46.036Z",
+            "modified": "2024-02-23T09:48:26.925Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFmMTFhMGQ3LThjOTAtNDYxMC1iZDhiLTVhOWNkYWFlZmU5ZCIsImVtYWlsIjoic3ViaGFzaGFua2FyYmVoZXJhQGdtYWlsLmNvbSIsImlhdCI6MTcwNTU0NjY3NCwiZXhwIjoxNzA4MTM4Njc0fQ.Ri9nAnTJUZHrZhMLGhf2q3IRMPTQAUH0SE2gw-3nJ7I\""
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"phoneNumber\":\"99999999994\",\n  \"otp\": \"9604\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "a4eaeb07-9486-4a34-888c-73d272b91678",
+            "colId": "66030f91-8b23-4bb9-b783-b9ff8ae96184",
+            "containerId": "a893d5c8-0bc6-465f-9484-c98c66905f33",
+            "name": "Admin Otp Verify",
+            "url": "http://localhost:3000/admin/verify",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-02-22T05:48:53.108Z",
+            "modified": "2024-02-23T07:50:16.818Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFmMTFhMGQ3LThjOTAtNDYxMC1iZDhiLTVhOWNkYWFlZmU5ZCIsImVtYWlsIjoic3ViaGFzaGFua2FyYmVoZXJhQGdtYWlsLmNvbSIsImlhdCI6MTcwNTU0NjY3NCwiZXhwIjoxNzA4MTM4Njc0fQ.Ri9nAnTJUZHrZhMLGhf2q3IRMPTQAUH0SE2gw-3nJ7I\""
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"phoneNumber\":\"1234567890\",\n  \"otp\": \"5835\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "815396b0-a28e-4977-9595-af58748fb646",
+            "colId": "66030f91-8b23-4bb9-b783-b9ff8ae96184",
+            "containerId": "5865816f-c321-464c-986d-927773d54ac9",
+            "name": "User Verify",
+            "url": "https://astrobackend.edevlop.com/user/verify",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-02-22T05:54:51.752Z",
+            "modified": "2024-02-23T09:54:55.170Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFmMTFhMGQ3LThjOTAtNDYxMC1iZDhiLTVhOWNkYWFlZmU5ZCIsImVtYWlsIjoic3ViaGFzaGFua2FyYmVoZXJhQGdtYWlsLmNvbSIsImlhdCI6MTcwNTU0NjY3NCwiZXhwIjoxNzA4MTM4Njc0fQ.Ri9nAnTJUZHrZhMLGhf2q3IRMPTQAUH0SE2gw-3nJ7I\""
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"phoneNumber\":\"9999999999s\",\n  \"otp\": \"5538\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "3e143c76-ad2e-4375-8805-8b00a7147247",
+            "colId": "66030f91-8b23-4bb9-b783-b9ff8ae96184",
+            "containerId": "8ec5ea2c-cd49-498f-a99d-fefc03daf037",
+            "name": "User Verify",
+            "url": "http://localhost:3000/user/verify",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-02-22T05:55:02.616Z",
+            "modified": "2024-02-23T07:51:46.759Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFmMTFhMGQ3LThjOTAtNDYxMC1iZDhiLTVhOWNkYWFlZmU5ZCIsImVtYWlsIjoic3ViaGFzaGFua2FyYmVoZXJhQGdtYWlsLmNvbSIsImlhdCI6MTcwNTU0NjY3NCwiZXhwIjoxNzA4MTM4Njc0fQ.Ri9nAnTJUZHrZhMLGhf2q3IRMPTQAUH0SE2gw-3nJ7I\""
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"phoneNumber\":\"1234567890\",\n  \"otp\": \"1014\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "0899860d-f920-4900-8e8d-d9f0a96277a6",
+            "colId": "66030f91-8b23-4bb9-b783-b9ff8ae96184",
+            "containerId": "951c6172-f879-4422-b2dc-8a548d012471",
+            "name": "Astrologer Otp Verify",
+            "url": "https://astrobackend.edevlop.com/astrologer/verify",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-02-22T06:09:57.875Z",
+            "modified": "2024-02-23T10:08:35.487Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFmMTFhMGQ3LThjOTAtNDYxMC1iZDhiLTVhOWNkYWFlZmU5ZCIsImVtYWlsIjoic3ViaGFzaGFua2FyYmVoZXJhQGdtYWlsLmNvbSIsImlhdCI6MTcwNTU0NjY3NCwiZXhwIjoxNzA4MTM4Njc0fQ.Ri9nAnTJUZHrZhMLGhf2q3IRMPTQAUH0SE2gw-3nJ7I\""
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"phoneNumber\":\"9999999999\",\n  \"otp\": \"8793\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "32444e97-1ee3-425b-83ec-1d7e8a859ce6",
+            "colId": "66030f91-8b23-4bb9-b783-b9ff8ae96184",
+            "containerId": "3aaaa4c7-3b9b-449d-aa3c-4d4abbf1167e",
+            "name": "Astrologer Otp Verify",
+            "url": "http://localhost:3000/astrologer/verify",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-02-22T06:10:22.594Z",
+            "modified": "2024-02-23T07:53:35.550Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFmMTFhMGQ3LThjOTAtNDYxMC1iZDhiLTVhOWNkYWFlZmU5ZCIsImVtYWlsIjoic3ViaGFzaGFua2FyYmVoZXJhQGdtYWlsLmNvbSIsImlhdCI6MTcwNTU0NjY3NCwiZXhwIjoxNzA4MTM4Njc0fQ.Ri9nAnTJUZHrZhMLGhf2q3IRMPTQAUH0SE2gw-3nJ7I\""
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"phoneNumber\":\"9999999999\",\n  \"otp\": \"2360\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "b92452ec-968d-48fa-a3f0-f68828c1bc61",
+            "colId": "66030f91-8b23-4bb9-b783-b9ff8ae96184",
+            "containerId": "8ec5ea2c-cd49-498f-a99d-fefc03daf037",
+            "name": "Get new accesstoken",
+            "url": "http://localhost:3000/user/access",
+            "method": "GET",
+            "sortNum": 25000,
+            "created": "2024-02-23T06:37:06.718Z",
+            "modified": "2024-02-23T07:52:04.800Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFmMTFhMGQ3LThjOTAtNDYxMC1iZDhiLTVhOWNkYWFlZmU5ZCIsImVtYWlsIjoic3ViaGFzaGFua2FyYmVoZXJhQGdtYWlsLmNvbSIsImlhdCI6MTcwNTU0NjY3NCwiZXhwIjoxNzA4MTM4Njc0fQ.Ri9nAnTJUZHrZhMLGhf2q3IRMPTQAUH0SE2gw-3nJ7I\"",
+                    "isDisabled": true
+                },
+                {
+                    "name": "Referer",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZU51bWJlciI6IjEyMzQ1Njc4OTAiLCJpYXQiOjE3MDg2NzQ3MDYsImV4cCI6MTcwODkzMzkwNn0.Kc0E2WgmWUCXlQh8HMDsUIYAhEVAus-IsDHvv9myWYA"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "02459ad2-2fb0-46b2-9c5b-99dfd97f7f36",
+            "colId": "66030f91-8b23-4bb9-b783-b9ff8ae96184",
+            "containerId": "5865816f-c321-464c-986d-927773d54ac9",
+            "name": "Get new accesstoken",
+            "url": "https://astrobackend.edevlop.com/user/access",
+            "method": "GET",
+            "sortNum": 25000,
+            "created": "2024-02-23T06:43:26.336Z",
+            "modified": "2024-02-23T09:51:44.689Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFmMTFhMGQ3LThjOTAtNDYxMC1iZDhiLTVhOWNkYWFlZmU5ZCIsImVtYWlsIjoic3ViaGFzaGFua2FyYmVoZXJhQGdtYWlsLmNvbSIsImlhdCI6MTcwNTU0NjY3NCwiZXhwIjoxNzA4MTM4Njc0fQ.Ri9nAnTJUZHrZhMLGhf2q3IRMPTQAUH0SE2gw-3nJ7I\"",
+                    "isDisabled": true
+                },
+                {
+                    "name": "Referer",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZU51bWJlciI6Ijk5OTk5OTk5OTlzIiwiaWF0IjoxNzA4NjgxODcxLCJleHAiOjE3MDg5NDEwNzF9.XvRJIOZYepeikXhsrkPIua2wtxG5uTxSQhHl48TzHow"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "8c1a3232-f2d6-4ad6-aab8-0f78ccbf66c3",
+            "colId": "66030f91-8b23-4bb9-b783-b9ff8ae96184",
+            "containerId": "a893d5c8-0bc6-465f-9484-c98c66905f33",
+            "name": "Get new accesstoken",
+            "url": "http://localhost:3000/user/access",
+            "method": "GET",
+            "sortNum": 25000,
+            "created": "2024-02-23T07:07:01.577Z",
+            "modified": "2024-02-23T07:50:28.408Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFmMTFhMGQ3LThjOTAtNDYxMC1iZDhiLTVhOWNkYWFlZmU5ZCIsImVtYWlsIjoic3ViaGFzaGFua2FyYmVoZXJhQGdtYWlsLmNvbSIsImlhdCI6MTcwNTU0NjY3NCwiZXhwIjoxNzA4MTM4Njc0fQ.Ri9nAnTJUZHrZhMLGhf2q3IRMPTQAUH0SE2gw-3nJ7I\"",
+                    "isDisabled": true
+                },
+                {
+                    "name": "Referer",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZU51bWJlciI6IjEyMzQ1Njc4OTAiLCJpYXQiOjE3MDg2NzQ2MTYsImV4cCI6MTcwODkzMzgxNn0.gIU8U1FYGvi_aSeiTC0qbsCvF-Bvto5g27kKG-ki04o"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e6c13e7c-d71e-40c4-9b7e-2967da82361e",
+            "colId": "66030f91-8b23-4bb9-b783-b9ff8ae96184",
+            "containerId": "3aaaa4c7-3b9b-449d-aa3c-4d4abbf1167e",
+            "name": "Get new accesstoken",
+            "url": "http://localhost:3000/user/access",
+            "method": "GET",
+            "sortNum": 25000,
+            "created": "2024-02-23T07:53:13.724Z",
+            "modified": "2024-02-23T07:54:16.899Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "",
+                    "isDisabled": true
+                },
+                {
+                    "name": "Referer",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZU51bWJlciI6Ijk5OTk5OTk5OTkiLCJpYXQiOjE3MDg2NzQ4MTUsImV4cCI6MTcwODkzNDAxNX0.vpPqrI08yBwt6bzZcumTjqn5-tU1EE8upurkGevqb7Q"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "1d897596-1b04-4fc0-9ece-51d50be50e02",
+            "colId": "66030f91-8b23-4bb9-b783-b9ff8ae96184",
+            "containerId": "1dffbc41-b074-4405-a97a-00ea8af9375c",
+            "name": "Get new accesstoken",
+            "url": "https://astrobackend.edevlop.com/user/access",
+            "method": "GET",
+            "sortNum": 25000,
+            "created": "2024-02-23T09:37:02.051Z",
+            "modified": "2024-02-23T09:48:57.866Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFmMTFhMGQ3LThjOTAtNDYxMC1iZDhiLTVhOWNkYWFlZmU5ZCIsImVtYWlsIjoic3ViaGFzaGFua2FyYmVoZXJhQGdtYWlsLmNvbSIsImlhdCI6MTcwNTU0NjY3NCwiZXhwIjoxNzA4MTM4Njc0fQ.Ri9nAnTJUZHrZhMLGhf2q3IRMPTQAUH0SE2gw-3nJ7I\"",
+                    "isDisabled": true
+                },
+                {
+                    "name": "Referer",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZU51bWJlciI6Ijk5OTk5OTk5OTk0IiwiaWF0IjoxNzA4NjgxNzA4LCJleHAiOjE3MDg5NDA5MDh9.i-gM2SRLP1AnWtHD7vdl0y-I7Crk5SqQBjEua0E2xV0"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "7b70369a-5aa5-442b-af3d-83e4db67934e",
+            "colId": "66030f91-8b23-4bb9-b783-b9ff8ae96184",
+            "containerId": "951c6172-f879-4422-b2dc-8a548d012471",
+            "name": "Get new accesstoken",
+            "url": "https://astrobackend.edevlop.com/user/access",
+            "method": "GET",
+            "sortNum": 25000,
+            "created": "2024-02-23T09:55:27.490Z",
+            "modified": "2024-02-23T10:08:49.786Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "",
+                    "isDisabled": true
+                },
+                {
+                    "name": "Referer",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZU51bWJlciI6Ijk5OTk5OTk5OTkiLCJpYXQiOjE3MDg2ODI5MTYsImV4cCI6MTcwODk0MjExNn0.AT-X-x8aJhG8qANvlRwEEoOW_1cU_1KS1UtFxm2xlaM"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "cf99c8b0-3a18-4a83-954b-42af54f22574",
+            "colId": "66030f91-8b23-4bb9-b783-b9ff8ae96184",
+            "containerId": "1dffbc41-b074-4405-a97a-00ea8af9375c",
+            "name": "Update Admin",
+            "url": "https://astrobackend.edevlop.com/admin/update",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-02-22T05:47:49.259Z",
+            "modified": "2024-02-23T09:49:43.857Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZU51bWJlciI6Ijk5OTk5OTk5OTk0IiwiaWF0IjoxNzA4NjgxNzM4LCJleHAiOjE3MDg3MDMzMzh9.ovJ6coJfU1WoNqp_qxeKLDqn7YDArwba05UiDfITaQg"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"firstname\": \"John\",\n  \"lastname\": \"Doe\",\n  \"gender\": \"male\",\n  \"email\": \"john@gmail.com\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "d3d0fc9a-1d22-40ca-86ee-5c3e907e1218",
+            "colId": "66030f91-8b23-4bb9-b783-b9ff8ae96184",
+            "containerId": "a893d5c8-0bc6-465f-9484-c98c66905f33",
+            "name": "Update Admin",
+            "url": "http://localhost:3000/admin/update",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-02-22T05:48:53.109Z",
+            "modified": "2024-02-23T07:50:40.738Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZU51bWJlciI6IjEyMzQ1Njc4OTAiLCJpYXQiOjE3MDg2NzQ2MjgsImV4cCI6MTcwODY5NjIyOH0.cGktLtJhLQz81orTRm8q7tObc4RFgpIycAFALVZihvE"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"firstname\": \"John\",\n  \"lastname\": \"Doe\",\n  \"gender\": \"male\",\n  \"email\": \"john@gmail.com\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "27b33d32-7fc6-4896-8f04-95bc6f4ca3f7",
+            "colId": "66030f91-8b23-4bb9-b783-b9ff8ae96184",
+            "containerId": "5865816f-c321-464c-986d-927773d54ac9",
+            "name": "Update User",
+            "url": "https://astrobackend.edevlop.com/user/update",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-02-22T05:54:53.433Z",
+            "modified": "2024-02-23T09:52:06.284Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZU51bWJlciI6Ijk5OTk5OTk5OTlzIiwiaWF0IjoxNzA4NjgxOTA4LCJleHAiOjE3MDg3MDM1MDh9.EFXxFqFdDMpf1ECIz6x2emfEfE-1FGlISKhpvrvd8F8"
+                },
+                {
+                    "name": "Referer",
+                    "value": "",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"firstname\": \"Johny\",\n  \"lastname\": \"Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"gender\": \"male\",\n  \"place_of_birth\": \"New York\",\n  \"date_of_birth\": \"2024-02-07T00:00:00Z\",\n  \"time_of_birth\": \"2024-02-07T11:21:01.739Z\",\n  \"status\": \"active\"\n}\n",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "87275e63-ca27-4bd7-b130-6eb963b31b71",
+            "colId": "66030f91-8b23-4bb9-b783-b9ff8ae96184",
+            "containerId": "8ec5ea2c-cd49-498f-a99d-fefc03daf037",
+            "name": "Update User",
+            "url": "http://localhost:3000/user/update",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-02-22T05:55:02.617Z",
+            "modified": "2024-02-23T07:52:19.370Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZU51bWJlciI6IjEyMzQ1Njc4OTAiLCJpYXQiOjE3MDg2NzQ3MjQsImV4cCI6MTcwODY5NjMyNH0.mX6mUoLVcyKgFypJ3wBx4dBdjTtoLy2EJZuoRHXvYTQ"
+                },
+                {
+                    "name": "Referer",
+                    "value": "",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"firstname\": \"Johny\",\n  \"lastname\": \"Doe\",\n  \"email\": \"john.doen@example.com\",\n  \"gender\": \"male\",\n  \"place_of_birth\": \"New York\",\n  \"date_of_birth\": \"2024-02-07T00:00:00Z\",\n  \"time_of_birth\": \"2024-02-07T11:21:01.739Z\",\n  \"status\": \"active\"\n}\n",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "a05e35aa-8b3b-4bc7-8a70-f907ad33ae9f",
+            "colId": "66030f91-8b23-4bb9-b783-b9ff8ae96184",
+            "containerId": "951c6172-f879-4422-b2dc-8a548d012471",
+            "name": "Update Astrologer",
+            "url": "https://astrobackend.edevlop.com/astrologer/update",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-02-22T06:10:00.497Z",
+            "modified": "2024-02-23T10:09:01.570Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZU51bWJlciI6Ijk5OTk5OTk5OTkiLCJpYXQiOjE3MDg2ODI5MzMsImV4cCI6MTcwODcwNDUzM30.Wbkb4tphf3ND53rsFUfMq-SI0ssm51Zr_xr_DEVxu_o"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"firstname\": \"John\",\n  \"lastname\": \"Doe\",\n  \"email\": \"johndoe@gmail.com\",\n  \"gender\": \"male\",\n  \"status\": \"active\",\n  \"image\": \"https://cdn-icons-png.flaticon.com/512/149/149071.png\",\n  \"short_bio\": \"Hello I am an experienced Astrologer I have 7 years of experience\",\n  \"city\": \"Delhi\",\n  \"country\": \"India\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "581ba63b-2b50-42db-8e09-b088c9494314",
+            "colId": "66030f91-8b23-4bb9-b783-b9ff8ae96184",
+            "containerId": "3aaaa4c7-3b9b-449d-aa3c-4d4abbf1167e",
+            "name": "Update Astrologer",
+            "url": "http://localhost:3000/astrologer/update",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-02-22T06:10:22.595Z",
+            "modified": "2024-02-23T07:54:41.389Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZU51bWJlciI6Ijk5OTk5OTk5OTkiLCJpYXQiOjE3MDg2NzQ4NTYsImV4cCI6MTcwODY5NjQ1Nn0.q__CMbW4HxX7rcaf61XlAqjNVuJ1gyj6qUL_0IN7Zk4"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"firstname\": \"John\",\n  \"lastname\": \"Doe\",\n  \"email\": \"johndoe@gmail.com\",\n  \"gender\": \"male\",\n  \"status\": \"active\",\n  \"image\": \"https://cdn-icons-png.flaticon.com/512/149/149071.png\",\n  \"short_bio\": \"Hello I am an experienced Astrologer I have 7 years of experience\",\n  \"city\": \"Delhi\",\n  \"country\": \"India\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "067758f4-fa6e-42d6-98d7-99a9a105cb25",
+            "colId": "66030f91-8b23-4bb9-b783-b9ff8ae96184",
+            "containerId": "1dffbc41-b074-4405-a97a-00ea8af9375c",
+            "name": "Get Admin",
+            "url": "https://astrobackend.edevlop.com/admin/",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-02-22T05:47:53.196Z",
+            "modified": "2024-02-23T09:50:12.224Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZU51bWJlciI6Ijk5OTk5OTk5OTk0IiwiaWF0IjoxNzA4NjgxNzM4LCJleHAiOjE3MDg3MDMzMzh9.ovJ6coJfU1WoNqp_qxeKLDqn7YDArwba05UiDfITaQg"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "4334b71f-bfcc-4143-82eb-f6b55bde624f",
+            "colId": "66030f91-8b23-4bb9-b783-b9ff8ae96184",
+            "containerId": "a893d5c8-0bc6-465f-9484-c98c66905f33",
+            "name": "Get Admin",
+            "url": "http://localhost:3000/admin/",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-02-22T05:48:53.110Z",
+            "modified": "2024-02-23T07:50:50.759Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZU51bWJlciI6IjEyMzQ1Njc4OTAiLCJpYXQiOjE3MDg2NzQ2MjgsImV4cCI6MTcwODY5NjIyOH0.cGktLtJhLQz81orTRm8q7tObc4RFgpIycAFALVZihvE"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "fe04f82d-fd99-4f12-8907-6e3e5525b4f2",
+            "colId": "66030f91-8b23-4bb9-b783-b9ff8ae96184",
+            "containerId": "5865816f-c321-464c-986d-927773d54ac9",
+            "name": "Delete User",
+            "url": "https://astrobackend.edevlop.com/user/delete",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-02-22T05:54:54.794Z",
+            "modified": "2024-02-23T09:54:37.873Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZU51bWJlciI6Ijk5OTk5OTk5OTlzIiwiaWF0IjoxNzA4NjgyMDQ3LCJleHAiOjE3MDg3MDM2NDd9.EyZyzupjNJQrtAF69IjS7jwiQO1rlBHcLHk9JH1VlkM"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "674b23d9-e89e-42b9-a4b8-730588c10852",
+            "colId": "66030f91-8b23-4bb9-b783-b9ff8ae96184",
+            "containerId": "8ec5ea2c-cd49-498f-a99d-fefc03daf037",
+            "name": "Delete User",
+            "url": "http://localhost:3000/user/delete",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-02-22T05:55:02.619Z",
+            "modified": "2024-02-23T07:52:29.870Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZU51bWJlciI6IjEyMzQ1Njc4OTAiLCJpYXQiOjE3MDg2NzQ3MjQsImV4cCI6MTcwODY5NjMyNH0.mX6mUoLVcyKgFypJ3wBx4dBdjTtoLy2EJZuoRHXvYTQ"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "448a7f7f-7074-45e5-9731-b0692f6613d9",
+            "colId": "66030f91-8b23-4bb9-b783-b9ff8ae96184",
+            "containerId": "951c6172-f879-4422-b2dc-8a548d012471",
+            "name": "Delete Astrologer",
+            "url": "https://astrobackend.edevlop.com/astrologer/verify",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-02-22T06:10:02.363Z",
+            "modified": "2024-02-23T10:09:28.922Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZU51bWJlciI6Ijk5OTk5OTk5OTkiLCJpYXQiOjE3MDg2ODI5MzMsImV4cCI6MTcwODcwNDUzM30.Wbkb4tphf3ND53rsFUfMq-SI0ssm51Zr_xr_DEVxu_o"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "8d3caf9b-9bdd-434c-afd0-2f1e8f8d55f4",
+            "colId": "66030f91-8b23-4bb9-b783-b9ff8ae96184",
+            "containerId": "3aaaa4c7-3b9b-449d-aa3c-4d4abbf1167e",
+            "name": "Delete Astrologer",
+            "url": "http://localhost:3000/astrologer/delete",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-02-22T06:10:22.596Z",
+            "modified": "2024-02-23T07:55:29.569Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZU51bWJlciI6Ijk5OTk5OTk5OTkiLCJpYXQiOjE3MDg2NzQ4NTYsImV4cCI6MTcwODY5NjQ1Nn0.q__CMbW4HxX7rcaf61XlAqjNVuJ1gyj6qUL_0IN7Zk4"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ea0090a2-842d-4e5d-9c0a-452a3ecae1ad",
+            "colId": "66030f91-8b23-4bb9-b783-b9ff8ae96184",
+            "containerId": "1dffbc41-b074-4405-a97a-00ea8af9375c",
+            "name": "Delete Admin",
+            "url": "https://astrobackend.edevlop.com/admin/delete",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2024-02-22T05:47:56.251Z",
+            "modified": "2024-02-23T09:50:39.144Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZU51bWJlciI6Ijk5OTk5OTk5OTk0IiwiaWF0IjoxNzA4NjgxNzM4LCJleHAiOjE3MDg3MDMzMzh9.ovJ6coJfU1WoNqp_qxeKLDqn7YDArwba05UiDfITaQg"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "98a76a3f-f061-4430-9393-87dae479a419",
+            "colId": "66030f91-8b23-4bb9-b783-b9ff8ae96184",
+            "containerId": "a893d5c8-0bc6-465f-9484-c98c66905f33",
+            "name": "Delete Admin",
+            "url": "http://localhost:3000/admin/delete",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2024-02-22T05:48:53.111Z",
+            "modified": "2024-02-23T07:51:09.779Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZU51bWJlciI6IjEyMzQ1Njc4OTAiLCJpYXQiOjE3MDg2NzQ2MjgsImV4cCI6MTcwODY5NjIyOH0.cGktLtJhLQz81orTRm8q7tObc4RFgpIycAFALVZihvE"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "d9b4cd38-0d00-45c8-a638-ed28a7330d57",
+            "colId": "66030f91-8b23-4bb9-b783-b9ff8ae96184",
+            "containerId": "5865816f-c321-464c-986d-927773d54ac9",
+            "name": "Get User",
+            "url": "https://astrobackend.edevlop.com/user/",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-02-22T05:54:56.240Z",
+            "modified": "2024-02-23T09:55:09.689Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZU51bWJlciI6Ijk5OTk5OTk5OTlzIiwiaWF0IjoxNzA4NjgyMDk2LCJleHAiOjE3MDg3MDM2OTZ9.XA4bss16NiSZ96Z_-vOsYXv55VBpN8lgrL4ZFj9p5vc"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "dd976fdf-cbbc-4ff5-aa38-a42d285c70fd",
+            "colId": "66030f91-8b23-4bb9-b783-b9ff8ae96184",
+            "containerId": "8ec5ea2c-cd49-498f-a99d-fefc03daf037",
+            "name": "Get User",
+            "url": "http://localhost:3000/user/",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-02-22T05:55:02.620Z",
+            "modified": "2024-02-23T07:52:43.430Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZU51bWJlciI6IjEyMzQ1Njc4OTAiLCJpYXQiOjE3MDg2NzQ3MjQsImV4cCI6MTcwODY5NjMyNH0.mX6mUoLVcyKgFypJ3wBx4dBdjTtoLy2EJZuoRHXvYTQ"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "cedc1a45-8a7c-403d-ac7e-4ad035689c7a",
+            "colId": "66030f91-8b23-4bb9-b783-b9ff8ae96184",
+            "containerId": "951c6172-f879-4422-b2dc-8a548d012471",
+            "name": "Get Astrologer",
+            "url": "https://astrobackend.edevlop.com/astrologer/",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-02-22T06:10:04.826Z",
+            "modified": "2024-02-23T10:09:10.043Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZU51bWJlciI6Ijk5OTk5OTk5OTkiLCJpYXQiOjE3MDg2ODI5MzMsImV4cCI6MTcwODcwNDUzM30.Wbkb4tphf3ND53rsFUfMq-SI0ssm51Zr_xr_DEVxu_o"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ecf47a4c-e0cd-41c8-8cce-5490b1cb8ca3",
+            "colId": "66030f91-8b23-4bb9-b783-b9ff8ae96184",
+            "containerId": "3aaaa4c7-3b9b-449d-aa3c-4d4abbf1167e",
+            "name": "Get Astrologer",
+            "url": "http://localhost:3000/astrologer/",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-02-22T06:10:22.597Z",
+            "modified": "2024-02-23T07:55:00.315Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZU51bWJlciI6Ijk5OTk5OTk5OTkiLCJpYXQiOjE3MDg2NzQ4NTYsImV4cCI6MTcwODY5NjQ1Nn0.q__CMbW4HxX7rcaf61XlAqjNVuJ1gyj6qUL_0IN7Zk4"
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

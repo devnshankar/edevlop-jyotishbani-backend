@@ -63,4 +63,5 @@ async function main() {
 }
 
 // main function invocation with node clusterization for multithreading
-nodeClusterizer(main);
+// nodeClusterizer(main);    // currently not using the clusterizer due to some deployment issues will resolve it later
+main();
