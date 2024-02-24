@@ -1,17 +1,20 @@
 import AdminService from "../../services/admin/admin.services.js";
+import _ from "lodash";
 
 export const getAdmin = async (req, res) => {
   try {
     // get the phone number from the request body
     const { phoneNumber } = req.body;
     // send get request to database
-    const admin = await AdminService.getAdmin(phoneNumber);
+    const Admin = await AdminService.getAdmin(phoneNumber);
+    // omiting the otp field for security purposes before sending the updated admin data
+    const secureAdminData = _.omit(Admin, ["otp", "otp_expires_in"]);
     // return user
     res.status(200).json({
       success: true,
       message: "Fetched astrologer data successfully",
       data: {
-        admin: admin,
+        admin: secureAdminData,
       },
     });
   } catch (error) {
@@ -148,12 +151,14 @@ export const updateAdmin = async (req, res) => {
   try {
     // make a prisma client admin updation request to the database
     const Admin = await AdminService.updateAdmin(req.body);
+    // omiting the otp field for security purposes before sending the updated admin data
+    const secureAdminData = _.omit(Admin, ["otp", "otp_expires_in"]);
     // return the updated admin data
     return res.status(200).json({
       success: true,
       message: "Admin data updated successfully",
       data: {
-        admin: Admin,
+        admin: secureAdminData,
       },
     });
   } catch (error) {

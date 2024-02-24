@@ -104,8 +104,7 @@ class UserService {
   static async updateUser(body) {
     try {
       const {
-        firstname,
-        lastname,
+        name,
         email,
         phoneNumber,
         gender,
@@ -120,8 +119,7 @@ class UserService {
           phoneNumber,
         },
         data: {
-          firstname: firstname,
-          lastname: lastname,
+          name: name,
           email: email,
           gender: gender,
           place_of_birth: place_of_birth,

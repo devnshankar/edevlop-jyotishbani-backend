@@ -121,35 +121,33 @@ class AstrologerService {
   static async updateAstrologer(body) {
     try {
       const {
-        firstname,
-        lastname,
+        name,
         email,
-        phoneNumber,
         gender,
         status,
         image,
         short_bio,
         city,
         country,
-        astrologer_type,
+        phoneNumber,
       } = body;
+      console.log(JSON.stringify(body, null , 2))
       const updationTime = new Date().toISOString();
       const astrologer = await prismaClient.astrologer.update({
         where: {
           phoneNumber,
         },
         data: {
-          firstname: firstname,
-          lastname: lastname,
+          name: name,
           email: email,
           gender: gender,
           status: status,
-          updatedAt: updationTime,
-          image: image,
+
           short_bio: short_bio,
-          city: city,
+          image: image,
           country: country,
-          // astrologer_type: astrologer_type,
+          city: city,
+          updatedAt: updationTime,
         },
       });
       return astrologer;

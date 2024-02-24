@@ -12,12 +12,11 @@ datasource db {
 
 model User {
   id             Int       @id @default(autoincrement())
-  firstname      String?
-  lastname       String?
+  name           String?
   email          String?   @unique
   phoneNumber    String    @unique
   otp            String?
-  otp_expired_in DateTime?
+  otp_expires_in DateTime?
 
   gender         Gender?
   place_of_birth String?
@@ -36,13 +35,11 @@ model User {
 // Define the data model for the astrologer
 model Astrologer {
   id             Int       @id @default(autoincrement())
-  firstname      String?
-  lastname       String?
+  name           String?
   phoneNumber    String    @unique
   email          String?
   otp            String?
-  otp_expired_in DateTime?
-  password       String?
+  otp_expires_in DateTime?
 
   categories    AstrologerCategory[]
   gender        Gender?
@@ -66,7 +63,6 @@ model Language {
   language_name String
   astrologers   Astrologer[]
 }
-
 
 model Rate {
   id                Int        @id @default(autoincrement())
@@ -104,13 +100,14 @@ model Transaction {
 
 // Define the data model for the admin
 model Admin {
-  id            Int            @id @default(autoincrement())
-  firstname     String?
-  lastname      String?
-  gender        Gender?
-  phoneNumber   String         @unique
-  email         String?
-  otp           String?
+  id             Int       @id @default(autoincrement())
+  name           String?
+  gender         Gender?
+  phoneNumber    String    @unique
+  email          String?
+  otp            String?
+  otp_expires_in DateTime?
+
   createdAt     DateTime       @default(now())
   updatedAt     DateTime       @updatedAt
   notifications Notification[] @relation("AdminNotifications")

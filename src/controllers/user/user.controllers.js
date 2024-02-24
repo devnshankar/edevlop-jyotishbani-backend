@@ -1,18 +1,21 @@
 import AuthService from "../../services/auth-middleware/auth.services.js";
 import UserService from "../../services/user/user.services.js";
+import _ from "lodash";
 
 export const getUser = async (req, res) => {
   try {
     // get the phone number from the request body
     const { phoneNumber } = req.body;
     // send get request to database
-    const user = await UserService.getUser(phoneNumber);
+    const User = await UserService.getUser(phoneNumber);
+    // omiting the otp field for security purposes before sending the updated user data
+    const secureUserData = _.omit(User, ["otp", "otp_expires_in"]);
     // return user
     res.status(200).json({
       success: true,
       message: "Fetched user data successfully",
       data: {
-        user: user,
+        user: secureUserData,
       },
     });
   } catch (error) {
@@ -151,12 +154,14 @@ export const updateUser = async (req, res) => {
   try {
     // make a prisma client user updation request to the database
     const User = await UserService.updateUser(req.body);
+    // omiting the otp field for security purposes before sending the updated user data
+    const secureUserData = _.omit(User, ["otp", "otp_expires_in"]);
     // return the updated user data
     return res.status(201).json({
       success: true,
       message: "User data updated successfully",
       data: {
-        user: User,
+        user: secureUserData,
       },
     });
   } catch (error) {

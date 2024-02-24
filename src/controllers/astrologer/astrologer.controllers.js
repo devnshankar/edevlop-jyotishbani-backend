@@ -1,17 +1,20 @@
 import AstrologerService from "../../services/astrologer/astrologer.services.js";
+import _ from "lodash";
 
 export const getAstrologer = async (req, res) => {
   try {
     // get the phone number from the request body
     const { phoneNumber } = req.body;
     // send get request to database
-    const astrologer = await AstrologerService.getAstrologer(phoneNumber);
+    const Astrologer = await AstrologerService.getAstrologer(phoneNumber);
+    // omiting the otp otp_expired_in field for security purposes before sending the updated astrologer data
+    const secureAstrologerData = _.omit(Astrologer, ["otp", "otp_expires_in"]);
     // return user
     res.status(200).json({
       success: true,
       message: "Fetched astrologer data successfully",
       data: {
-        astrologer: astrologer,
+        astrologer: secureAstrologerData,
       },
     });
   } catch (error) {
@@ -154,12 +157,14 @@ export const updateAstrologer = async (req, res) => {
   try {
     // make a prisma client astrologer updation request to the database
     const Astrologer = await AstrologerService.updateAstrologer(req.body);
+    // omiting the otp otp_expired_in field for security purposes before sending the updated astrologer data
+    const secureAstrologerData = _.omit(Astrologer, ["otp", "otp_expires_in"]);
     // return the updated astrologer data
     return res.status(201).json({
       success: true,
       message: "Astrologer data updated successfully",
       data: {
-        astrologer: Astrologer,
+        astrologer: secureAstrologerData,
       },
     });
   } catch (error) {

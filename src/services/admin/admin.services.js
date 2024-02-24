@@ -120,8 +120,7 @@ class AdminService {
   static async updateAdmin(body) {
     try {
       const {
-        firstname,
-        lastname,
+        name,
         email,
         gender,
         phoneNumber
@@ -132,8 +131,7 @@ class AdminService {
           phoneNumber,
         },
         data: {
-          firstname: firstname,
-          lastname: lastname,
+          name: name,
           email: email,
           gender: gender,
           updatedAt: updationTime,
